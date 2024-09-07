@@ -34,8 +34,3 @@ def get_height_constant(height: float):
 
 def get_width_constant(n_gores: int):
     return (2*pi)/n_gores
-
-if __name__=="__main__":
-    r = compute_step_angles()
-    s = compute_sin(r)
-    print(s.shape)
