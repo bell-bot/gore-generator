@@ -15,7 +15,7 @@ class ComputeGoreDimensionsTestCase(unittest.TestCase):
         height_const = 0.5
         width_const = 0.1
         
-        actual_result = compute_gore_dimensions(input_array, height, n_gores, height_const, width_const)
+        actual_result = compute_gore_dimensions(input_array, height_const, width_const)
         
         expected_result = np.array([[45.0, 30.0, 0.0],[0.0,0.05,0.1]], dtype=np.float64)
         

@@ -22,7 +22,7 @@ def compute_step(radius: float, height: float, angle: float, n_gores: int):
     
     return [h_angle, w_angle]
 
-def compute_gore_dimensions(input_array: np.ndarray, height: float, n_gores: int, height_const: float, width_const: float):
+def compute_gore_dimensions(input_array: np.ndarray, height_const: float, width_const: float):
     
     const_array = np.array([height_const, width_const]).reshape((2,1))
     input_array[0] = 90 - input_array[0]
@@ -32,5 +32,16 @@ def compute_gore_dimensions(input_array: np.ndarray, height: float, n_gores: int
 def get_height_constant(height: float):
     return height/90.0
 
-def get_width_constant(n_gores: int):
-    return (2*pi)/n_gores
+def get_width_constant(n_gores: int, radius: float):
+    return (2*pi*radius)/n_gores
+
+def get_gore(radius: float, n_gores: int, step_size: float = 1.0):
+    height = compute_height(radius)
+    
+    height_const = get_height_constant(height)
+    width_const = get_width_constant(n_gores, radius)
+    
+    step_angles = compute_step_angles(step_size)
+    input_array = compute_sin(step_angles)
+    
+    return compute_gore_dimensions(input_array, height_const, width_const)
