@@ -1,0 +1,1 @@
+IMAGE_PATH = "output/tmp.pdf"
