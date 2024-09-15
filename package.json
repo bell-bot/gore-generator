@@ -1,16 +1,5 @@
 {
-  "dependencies": {
-    "@headlessui/react": "^2.1.5",
-    "@heroicons/react": "^2.1.5",
-    "@tailwindcss/forms": "^0.5.9",
-    "headlessui": "^0.0.0",
-    "heroicons": "^2.1.5",
-    "onchange": "^7.1.0"
-  },
   "devDependencies": {
-    "prettier": "3.3.3"
-  },
-  "scripts": {
-    "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}"
+    "prettier": "^3.3.3"
   }
 }
