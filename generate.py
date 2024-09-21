@@ -20,5 +20,5 @@ def generate(radius: float, n_gores: int, precision: float):
     gore = get_gore(radius, n_gores, step_size)
     
     plot = plot_gore(gore)
-    plot.savefig("GoreGeneratorService/" + IMAGE_PATH, format='png', bbox_inches='tight')
+    plot.savefig(IMAGE_PATH, format='png', bbox_inches='tight')
     
