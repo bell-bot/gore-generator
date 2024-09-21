@@ -2,17 +2,19 @@
 
 import os.path
 import sys
+from flask_cors import CORS
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from flask import Flask, make_response, request, send_file
 
-from server.constants import IMAGE_PATH
-from server.generate import generate
+from constants import IMAGE_PATH
+from generate import generate
 app = Flask(__name__)
+CORS(app)
 
 @app.get('/generate')
 def generate_gore():
+    print("Working dir: " + os.getcwd())
     radius = request.args.get('radius', type=float)
     n_gores = request.args.get('n_gores', type=int)
     precision = request.args.get('precision', type=float)
@@ -22,4 +24,7 @@ def generate_gore():
     
     generate(radius, n_gores, precision)
     
-    return send_file(IMAGE_PATH)
+    response = make_response(send_file(IMAGE_PATH))
+    response.headers.add('Content-Type', 'image/png')
+
+    return response

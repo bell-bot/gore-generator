@@ -3,7 +3,7 @@
 import os.path
 import sys
 
-from server.constants import IMAGE_PATH
+from constants import IMAGE_PATH
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from plot_gore import plot_gore
@@ -20,6 +20,5 @@ def generate(radius: float, n_gores: int, precision: float):
     gore = get_gore(radius, n_gores, step_size)
     
     plot = plot_gore(gore)
-    
-    plot.savefig("server/" + IMAGE_PATH, format='pdf')
+    plot.savefig("GoreGeneratorService/" + IMAGE_PATH, format='png', bbox_inches='tight')
     

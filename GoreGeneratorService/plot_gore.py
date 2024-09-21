@@ -38,7 +38,8 @@ def plot_gore(gore):
     x_axis = get_bottom_boundary(gore)
     gore_mirror = get_mirror(gore)
     
-    print(x_axis)
+    print(x_limit)
+    print(y_limit)
     
     fig,ax = plt.subplots(figsize=(x_limit, y_limit))
     
