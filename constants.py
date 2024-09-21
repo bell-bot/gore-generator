@@ -1,1 +1,1 @@
-IMAGE_PATH = "output/tmp.png"
+IMAGE_PATH = "tmp/tmp.png"
