@@ -3,7 +3,7 @@
 import os.path
 import sys
 
-from constants import IMAGE_PATH
+from constants import PDF_PATH, PNG_PATH
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from plot_gore import plot_gore
@@ -19,6 +19,11 @@ def generate(radius: float, n_gores: int, precision: float):
         
     gore = get_gore(radius, n_gores, step_size)
     
-    plot = plot_gore(gore)
-    plot.savefig(IMAGE_PATH, format='png', bbox_inches='tight')
+    fig, ax = plot_gore(gore)
+    
+    fig.savefig(PDF_PATH, format='pdf')
+    aspect_ratio = ax.get_aspect()
+
+    fig.set_size_inches(800/fig.dpi, (800*aspect_ratio)/fig.dpi)
+    fig.savefig(PNG_PATH, format='png', bbox_inches="tight")
     

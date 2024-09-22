@@ -41,12 +41,11 @@ def plot_gore(gore):
     print(x_limit)
     print(y_limit)
     
-    fig,ax = plt.subplots(figsize=(x_limit, y_limit))
-    
+    fig,ax = plt.subplots(figsize=(x_limit*2, y_limit))
+
+    setup_axes(ax, x_limit, y_limit)
     ax.plot(gore[1], gore[0], color='black', linewidth=1)
     ax.plot(gore_mirror[1], gore_mirror[0], color='black', linewidth=1)
     ax.plot(x_axis[0], x_axis[1], color='black', linewidth=2)
     
-    setup_axes(ax, x_limit, y_limit)
-    
-    return plt
+    return fig, ax

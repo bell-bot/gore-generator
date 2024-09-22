@@ -1,1 +1,3 @@
-IMAGE_PATH = "/tmp/tmp.png"
+PDF_PATH = "/tmp/tmp.pdf"
+PNG_PATH = "tmp/tmp.png"
+ZIP_PATH = "tmp/tmp.zip"
