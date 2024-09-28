@@ -4,9 +4,9 @@ from flask_cors import CORS
 
 from flask import Flask, make_response, request, send_file
 
-from src.constants import PDF_PATH, ZIP_PATH
-from src.generate import generate
-from src.util import zip_response
+from constants import PDF_PATH, ZIP_PATH
+from generate import generate
+from util import zip_response
 app = Flask(__name__)
 CORS(app)
 

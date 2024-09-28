@@ -1,6 +1,6 @@
 import unittest
 
-from src.compute_gore import compute_height
+from compute_gore import compute_height
 
 class ComputeHeightTestCase(unittest.TestCase):
 

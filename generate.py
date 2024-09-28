@@ -2,11 +2,11 @@
 
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
-from src.constants import PDF_PATH, PNG_PATH
+from constants import PDF_PATH, PNG_PATH
 
-from src.plot_gore import plot_gore
+from plot_gore import plot_gore
 
-from src.compute_gore import get_gore
+from compute_gore import get_gore
 
 def get_step_size_from_precision(precision: float):
     return 50.0/precision

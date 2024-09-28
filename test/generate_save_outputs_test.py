@@ -3,7 +3,7 @@ import unittest
 import os
 import matplotlib.pyplot as plt
 
-from src.generate import save_outputs
+from generate import save_outputs
 
 class SaveOutputsTestCase(unittest.TestCase):
 

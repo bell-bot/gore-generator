@@ -1,6 +1,6 @@
 import unittest
 
-from src.compute_gore import compute_step_angles
+from compute_gore import compute_step_angles
 
 class ComputeStepAnglesTestCase(unittest.TestCase):
     

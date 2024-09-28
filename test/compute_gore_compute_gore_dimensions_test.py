@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 import numpy.testing as nptest
 
-from src.compute_gore import compute_gore_dimensions
+from compute_gore import compute_gore_dimensions
 
 class ComputeGoreDimensionsTestCase(unittest.TestCase):
     
