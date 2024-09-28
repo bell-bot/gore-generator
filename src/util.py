@@ -1,6 +1,6 @@
 import zipfile
 
-from constants import PDF_PATH, PNG_PATH, ZIP_PATH
+from src.constants import PDF_PATH, PNG_PATH, ZIP_PATH
 
 def zip_response():
     zipped = zipfile.ZipFile(ZIP_PATH, 'w', zipfile.ZIP_DEFLATED)
@@ -8,4 +8,3 @@ def zip_response():
     zipped.write(PNG_PATH)
 
     zipped.close()
-    return zipped

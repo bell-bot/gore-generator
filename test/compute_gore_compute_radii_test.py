@@ -1,11 +1,6 @@
-import os.path
-import sys
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-
 import unittest
 
-from compute_gore import compute_step_angles
+from src.compute_gore import compute_step_angles
 
 class ComputeStepAnglesTestCase(unittest.TestCase):
     

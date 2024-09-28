@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 
-import os.path
-import sys
+from matplotlib.axes import Axes
+from matplotlib.figure import Figure
+from src.constants import PDF_PATH, PNG_PATH
 
-from constants import PDF_PATH, PNG_PATH
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from src.plot_gore import plot_gore
 
-from plot_gore import plot_gore
-
-from compute_gore import get_gore
+from src.compute_gore import get_gore
 
 def get_step_size_from_precision(precision: float):
     return 50.0/precision
@@ -21,9 +19,16 @@ def generate(radius: float, n_gores: int, precision: float):
     
     fig, ax = plot_gore(gore)
     
+    save_outputs(fig,ax)
+
+    return True
+
+def save_outputs(fig: Figure, ax: Axes):
     fig.savefig(PDF_PATH, format='pdf')
     aspect_ratio = ax.get_aspect()
 
+    if type(aspect_ratio) != float:
+        aspect_ratio = 1.0
+
     fig.set_size_inches(800/fig.dpi, (800*aspect_ratio)/fig.dpi)
     fig.savefig(PNG_PATH, format='png', bbox_inches="tight")
-    

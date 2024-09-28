@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
-
-import os.path
-import sys
 from flask_cors import CORS
 
 
 from flask import Flask, make_response, request, send_file
 
-from constants import PDF_PATH, ZIP_PATH
-from generate import generate
-from util import zip_response
+from src.constants import PDF_PATH, ZIP_PATH
+from src.generate import generate
+from src.util import zip_response
 app = Flask(__name__)
 CORS(app)
 
@@ -25,9 +22,8 @@ def generate_gore():
     
     generate(radius, n_gores, precision)
     
-    response_body = zip_response()
+    zip_response()
 
-    response = make_response(send_file(ZIP_PATH))
-    response.headers.add('Content-Type', 'zip')
+    response = send_file("../" + ZIP_PATH, 'zip')
 
     return response

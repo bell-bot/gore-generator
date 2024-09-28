@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
 
-import os.path
-import sys
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import matplotlib
 matplotlib.use('agg')
 import matplotlib.pyplot as plt

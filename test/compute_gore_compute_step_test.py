@@ -1,11 +1,6 @@
-import os.path
-import sys
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-
 import unittest
 from numpy.testing import assert_array_almost_equal
-from compute_gore import compute_step
+from src.compute_gore import compute_step
 
 class ComputeStepTestCase(unittest.TestCase):
 

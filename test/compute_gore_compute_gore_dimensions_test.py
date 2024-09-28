@@ -1,12 +1,8 @@
-import os.path
-import sys
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import unittest
 import numpy as np
 import numpy.testing as nptest
 
-from compute_gore import compute_gore_dimensions
+from src.compute_gore import compute_gore_dimensions
 
 class ComputeGoreDimensionsTestCase(unittest.TestCase):
     

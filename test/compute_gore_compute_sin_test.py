@@ -1,13 +1,8 @@
-import os.path
-import sys
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-
 import unittest
 import numpy as np
 import numpy.testing as nptest
 
-from compute_gore import compute_sin
+from src.compute_gore import compute_sin
 
 class ComputeSinTestCase(unittest.TestCase):
     
