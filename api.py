@@ -2,7 +2,6 @@
 
 from flask_cors import CORS
 
-
 from flask import Flask, make_response, request, send_file
 
 from constants import PDF_PATH, ZIP_PATH
@@ -25,6 +24,6 @@ def generate_gore():
     
     zip_response()
 
-    response = send_file("../" + ZIP_PATH, 'zip')
+    response = send_file(ZIP_PATH, 'zip')
 
     return response
