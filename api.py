@@ -25,9 +25,9 @@ def generate_gore():
     if (radius == None or n_gores == None or precision == None):
         return make_response("Missing attributes: all attributes must be given", 400)
     
-    generate(radius, n_gores, precision)
+    generate(radius, n_gores, precision, uuid)
     
-    zip_response()
+    zip_response(uuid)
     zip_path = ZIP_PATH(uuid)
     response = send_file(zip_path, 'zip')
 
