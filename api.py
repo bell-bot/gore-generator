@@ -19,7 +19,7 @@ def generate_gore():
     n_gores = int(float(request.args.get('n_gores', type=str)))
     precision = request.args.get('precision', type=float)
 
-    request_uuid = uuid.uuid4()
+    request_uuid = str(uuid.uuid4())
     print(f"Using uuid: {request_uuid}")
     
     if (radius == None or n_gores == None or precision == None):
