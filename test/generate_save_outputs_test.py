@@ -8,16 +8,16 @@ from generate import save_outputs
 
 class SaveOutputsTestCase(unittest.TestCase):
 
-    @patch('generate.PDF_PATH', 'tmp/test.pdf')
-    @patch('generate.PNG_PATH', 'tmp/test.png')
+    @patch('generate.PDF_PATH', lambda uuid : f'tmp/test_{uuid}.pdf')
+    @patch('generate.PNG_PATH', lambda uuid: f'tmp/test_{uuid}.png')
     def testCreatesCorrectOutputFiles(self):
 
         self.delete_tmp_dir_contents()
 
         fig, ax = plt.subplots()
-        save_outputs(fig, ax)
+        save_outputs(fig, ax, uuid = "1")
 
-        self.assert_files_created(["tmp/test.pdf", "tmp/test.png"])
+        self.assert_files_created(["tmp/test_1.pdf", "tmp/test_1.png"])
         self.delete_tmp_dir_contents()
 
     def delete_tmp_dir_contents(self):

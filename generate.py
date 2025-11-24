@@ -12,7 +12,7 @@ import os
 def get_step_size_from_precision(precision: float):
     return 50.0/precision
 
-def generate(radius: float, n_gores: int, precision: float):
+def generate(radius: float, n_gores: int, precision: float, uuid: str):
     
     step_size = get_step_size_from_precision(precision)
         
@@ -23,9 +23,11 @@ def generate(radius: float, n_gores: int, precision: float):
 
     return True
 
-def save_outputs(fig: Figure, ax: Axes):
-    fig.savefig(PDF_PATH, format='pdf')
-    print(f"Saved PDF to {os.path.abspath(PDF_PATH)}")
+def save_outputs(fig: Figure, ax: Axes, uuid: str):
+
+    file_pdf_path = PDF_PATH(uuid)
+    fig.savefig(file_pdf_path, format='pdf')
+    print(f"Saved PDF to {os.path.abspath(file_pdf_path)}")
 
     aspect_ratio = ax.get_aspect()
 
@@ -33,5 +35,7 @@ def save_outputs(fig: Figure, ax: Axes):
         aspect_ratio = 1.0
 
     fig.set_size_inches(800/fig.dpi, (800*aspect_ratio)/fig.dpi)
-    fig.savefig(PNG_PATH, format='png', bbox_inches="tight")
-    print(f"Saved PNG to {os.path.abspath(PNG_PATH)}")
+
+    file_png_path = PNG_PATH(uuid)
+    fig.savefig(file_png_path, format='png', bbox_inches="tight")
+    print(f"Saved PNG to {os.path.abspath(file_png_path)}")
