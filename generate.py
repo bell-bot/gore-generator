@@ -34,4 +34,4 @@ def save_outputs(fig: Figure, ax: Axes):
 
     fig.set_size_inches(800/fig.dpi, (800*aspect_ratio)/fig.dpi)
     fig.savefig(PNG_PATH, format='png', bbox_inches="tight")
-    logger.debug(f"Saved PNG to {os.path.abspath(PNG_PATH)}")
+    print(f"Saved PNG to {os.path.abspath(PNG_PATH)}")
