@@ -17,7 +17,6 @@ def generate(radius: float, n_gores: int, precision: float):
     gore = get_gore(radius, n_gores, step_size)
     
     fig, ax = plot_gore(gore)
-    fig.savefig("generate_test.pdf")
     save_outputs(fig,ax)
 
     return True
