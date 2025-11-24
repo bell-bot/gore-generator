@@ -19,7 +19,7 @@ def generate(radius: float, n_gores: int, precision: float, uuid: str):
     gore = get_gore(radius, n_gores, step_size)
     
     fig, ax = plot_gore(gore)
-    save_outputs(fig,ax)
+    save_outputs(fig,ax, uuid)
 
     return True
 
