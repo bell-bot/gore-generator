@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
 from constants import PDF_PATH, PNG_PATH
@@ -18,7 +17,7 @@ def generate(radius: float, n_gores: int, precision: float):
     gore = get_gore(radius, n_gores, step_size)
     
     fig, ax = plot_gore(gore)
-    
+    fig.savefig("generate_test.pdf")
     save_outputs(fig,ax)
 
     return True

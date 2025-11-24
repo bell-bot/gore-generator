@@ -12,11 +12,10 @@ class SaveOutputsTestCase(unittest.TestCase):
         self.delete_tmp_dir_contents()
 
         fig, ax = plt.subplots()
-
         save_outputs(fig, ax)
 
         self.assert_files_created(["tmp/tmp.pdf", "tmp/tmp.png"])
-
+        self.delete_tmp_dir_contents()
 
     def delete_tmp_dir_contents(self):
         for file in os.listdir('tmp'):

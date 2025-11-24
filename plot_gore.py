@@ -43,5 +43,5 @@ def plot_gore(gore):
     ax.plot(gore[1], gore[0], color='black', linewidth=1)
     ax.plot(gore_mirror[1], gore_mirror[0], color='black', linewidth=1)
     ax.plot(x_axis[0], x_axis[1], color='black', linewidth=2)
-    
+    fig.savefig("test_2.pdf")
     return fig, ax
