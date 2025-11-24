@@ -1,5 +1,6 @@
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 import os
 import matplotlib.pyplot as plt
 
@@ -7,6 +8,8 @@ from generate import save_outputs
 
 class SaveOutputsTestCase(unittest.TestCase):
 
+    @patch('generate.PDF_PATH', 'tmp/test.pdf')
+    @patch('generate.PNG_PATH', 'tmp/test.png')
     def testCreatesCorrectOutputFiles(self):
 
         self.delete_tmp_dir_contents()
@@ -14,7 +17,7 @@ class SaveOutputsTestCase(unittest.TestCase):
         fig, ax = plt.subplots()
         save_outputs(fig, ax)
 
-        self.assert_files_created(["tmp/tmp.pdf", "tmp/tmp.png"])
+        self.assert_files_created(["tmp/test.pdf", "tmp/test.png"])
         self.delete_tmp_dir_contents()
 
     def delete_tmp_dir_contents(self):
